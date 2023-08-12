@@ -5,23 +5,16 @@
 
 {% block content %}
 
-    <h2>Stocks Form</h2>
+    <h2>Food search</h2>
 
-    <p>Request some stock market data...</p>
+    <p>Search a food item to understand its nutritional value...</p>
 
     <form action="/nutrition" method="POST">
 
-        <label>Stock Symbol:</label>
-        <input type="text" name="symbol" placeholder="MSFT" value="MSFT">
+        <label>Food:</label>
+        <input type="text" placeholder="coffee">
         <br>
 
-        <label>Risk Tolerance:</label>
-        <select name="risk_level">
-            <option value="high">High</option>
-            <option value="medium">Medium</option>
-            <option value="low">Low</option>
-        </select>
-        <br>
 
         <button class="btn btn-success">Submit</button>
     </form>
