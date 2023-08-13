@@ -1,8 +1,7 @@
 
 
-
-#app_id = "1c151feb"
-#app_key = "36787056f538f7a336fcb7b8c67f39c7"
+app_id = "1c151feb" #shouldn't this be hidden?
+app_key = "36787056f538f7a336fcb7b8c67f39c7" #shouldn't this be hidden 
 
 import os 
 from dotenv import load_dotenv
@@ -26,7 +25,7 @@ print(url)
 import requests
 import json
 
-url = 'https://api.edamam.com/search?q=' + query + '&app_id=' + app_id + '&app_key=' + app_key
+#url = 'https://api.edamam.com/search?q=' + query + '&app_id=' + app_id + '&app_key=' + app_key
 
 r = requests.get(url)
 data = json.loads(r.text)
@@ -39,4 +38,12 @@ print(len(results))
 
 from pprint import pprint
 
-pprint(results[0])
+from pprint import pprint
+
+#pprint(results[0])
+
+recipe = results[0]["recipe"]
+print(recipe.keys())
+print(recipe["label"])
+print(recipe["calories"])
+
