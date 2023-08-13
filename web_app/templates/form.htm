@@ -1,0 +1,22 @@
+#to be updated
+
+{% extends "bootstrap_5_layout.html" %}
+{% set active_page = "stocks_form" %}
+
+{% block content %}
+
+    <h2>Food search</h2>
+
+    <p>Search a food item to understand its nutritional value...</p>
+
+    <form action="/nutrition" method="POST">
+
+        <label>Food:</label>
+        <input type="text" placeholder="coffee">
+        <br>
+
+
+        <button class="btn btn-success">Submit</button>
+    </form>
+
+{% endblock %}
