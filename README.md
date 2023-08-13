@@ -3,10 +3,16 @@ Web Application to search food and report calories and nutrients
 
 
 ## Setup
-Obtain the API Key and App Id for Edanam. The key and id will be hidden
+Obtain the API Key and App Id for Edanam. The key and id will be hidden by creating a .env file. The .env file should be placed inside (like the following example)
 
 url = f"https://api.edamam.com/search?q={query}&app_id={app_id}&app_key={app_key}"
 
+```sh
+#this is the "env" file (in the root directory of the rope)
+
+#app_id = "________"
+#app_key = "_____________"
+```
 
 Create a virtual environment
 
