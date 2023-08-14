@@ -25,7 +25,20 @@ def format_pct(my_number):
     """
     return f"{my_number:.2f}"
 
+def fetch_data(query):
 
+    url = f"https://api.edamam.com/search?q={query}&app_id={APP_ID}&app_key={APP_KEY}"
+    print(url)
+
+    #url = 'https://api.edamam.com/search?q=' + query + '&app_id=' + app_id + '&app_key=' + app_key
+
+    r = requests.get(url)
+    data = json.loads(r.text)
+    print(type(data))
+    print(data)
+
+    results = data["hits"]
+    return results 
 
 if __name__=="__main__":
     # instructions to only run the code below if we run this file from the command line
@@ -39,19 +52,8 @@ if __name__=="__main__":
 
     query = "coffee"
 
-    url = f"https://api.edamam.com/search?q={query}&app_id={APP_ID}&app_key={APP_KEY}"
-    print(url)
-
-
-
-    #url = 'https://api.edamam.com/search?q=' + query + '&app_id=' + app_id + '&app_key=' + app_key
-
-    r = requests.get(url)
-    data = json.loads(r.text)
-    print(type(data))
-    print(data)
-
-    results = data["hits"]
+   
+    results = fetch_data(query)
     print(type(results))
     print(len(results))
 
