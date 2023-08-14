@@ -51,7 +51,6 @@ if __name__=="__main__":
 
 
     query = "coffee"
-
    
     results = fetch_data(query)
     print(type(results))
