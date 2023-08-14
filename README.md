@@ -29,7 +29,9 @@ Install third-party package:
 pip install -r requirements.txt
 ```
 
-## Usage 
+```sh
+pip install python-dotenv 
+```
 
 Run the report
 ```sh

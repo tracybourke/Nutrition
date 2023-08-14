@@ -10,14 +10,10 @@ python-dotenv
 
 # for web app:
 flask # <--- ADD FOR WEB APP
-#gunicorn
+gunicorn
 
 
 # for testing:
 pytest
 
 
-# for web app:
-flask
-#gunicorn
-gunicorn

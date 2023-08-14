@@ -1,49 +1,67 @@
 
-
-app_id = "1c151feb" #shouldn't this be hidden?
-app_key = "36787056f538f7a336fcb7b8c67f39c7" #shouldn't this be hidden 
-
+import requests
+import json
 import os 
+from pprint import pprint
 from dotenv import load_dotenv
 
 load_dotenv()#envoking this function loads contents of the ".env" file into the script's environment... 
 
 #... where they can be accessed /read via the os module as usual: 
-ID= os.getenv("app_id")
-Key= os.getenv("app_key")
 
 
-#url = f"https://api.edamam.com/api/v2/recipies.json?app_id={app_id}&app_key={app_key}"
-#print(url)
+APP_ID= os.getenv("APP_ID")
+APP_KEY= os.getenv("APP_KEY")
 
 
-query = "coffee"
 
-url = f"https://api.edamam.com/search?q={query}&app_id={app_id}&app_key={app_key}"
-print(url)
+def format_pct(my_number):
+    """
+    Formats a decimal number like 3.6555554 as a decimal rounded to two decimal places.
 
-import requests
-import json
+    Param my_number (float) like 3.6555554
 
-#url = 'https://api.edamam.com/search?q=' + query + '&app_id=' + app_id + '&app_key=' + app_key
+    Returns (float) like '3.66'
+    """
+    return f"{my_number:.2f}"
 
-r = requests.get(url)
-data = json.loads(r.text)
-print(type(data))
-print(data)
 
-results = data["hits"]
-print(type(results))
-print(len(results))
 
-from pprint import pprint
+if __name__=="__main__":
+    # instructions to only run the code below if we run this file from the command line
+    # otherwise if we are just importing some functions from this file 
+    # don't run this code
 
-from pprint import pprint
 
-#pprint(results[0])
+    #url = f"https://api.edamam.com/api/v2/recipies.json?app_id={app_id}&app_key={app_key}"
+    #print(url)
 
-recipe = results[0]["recipe"]
-print(recipe.keys())
-print(recipe["label"])
-print(recipe["calories"])
+
+    query = "coffee"
+
+    url = f"https://api.edamam.com/search?q={query}&app_id={APP_ID}&app_key={APP_KEY}"
+    print(url)
+
+
+
+    #url = 'https://api.edamam.com/search?q=' + query + '&app_id=' + app_id + '&app_key=' + app_key
+
+    r = requests.get(url)
+    data = json.loads(r.text)
+    print(type(data))
+    print(data)
+
+    results = data["hits"]
+    print(type(results))
+    print(len(results))
+
+
+
+    #pprint(results[0])
+
+    recipe = results[0]["recipe"]
+    print(recipe.keys())
+    print(recipe["label"])
+    #testing def format_pct to clean up numerical format
+    print(format_pct(recipe["calories"]))
 
