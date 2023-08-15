@@ -1,8 +1,6 @@
-#To be updated 
+#This is the "web_app/routes/nutrition_routes.py" file...
 
-this is the "web_app/routes/nutrition_routes.py" file...
-
-from flask import Blueprint, request, render_template, redirect, flash
+from flask import Blueprint, request, render_template
 
 from app.edanam import fetch_nutrtion_data, format_pct
 
