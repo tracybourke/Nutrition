@@ -13,7 +13,7 @@ flask # <--- ADD FOR WEB APP
 gunicorn
 
 
-# for testing:
+# Create name_test.py file, then add pytest to requirements file for testing:
 pytest
 
 
