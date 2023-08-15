@@ -8,10 +8,10 @@ Obtain the API Key and App Id for Edanam. The key and id will be hidden by creat
 url = f"https://api.edamam.com/search?q={query}&app_id={app_id}&app_key={app_key}"
 
 ```sh
-#this is the "env" file (in the root directory of the rope)
+#this is the "env" file (in the root directory of the rope) The assigned name must be in CAPS. Eliminate spaces to avoid possible issues
 
-#app_id = "________"
-#app_key = "_____________"
+#APP_ID="________"
+#APP_KEY = "_____________"
 ```
 
 Create a virtual environment
@@ -65,3 +65,4 @@ pytest
 ## Deployment
 
 ## [Deployment Guide](/DEPLOYING.md)
+
