@@ -2,22 +2,22 @@
 
 from flask import Blueprint, request, render_template
 
-from app.edanam import fetch_nutrtion_data, format_pct
+
 
 nutrition_routes = Blueprint("nutrition_routes", __name__)
 
-
-@nutrition_routes.route("/nutrition/dashboard")
+@nutrition_routes.route("/")
+@nutrition_routes.route("/nutrition")
 def nutrition_dashboard():
     print("NUTRITION DASHBOARD...")
 
     try:
-        data = fetch_nutrition_data()
+        data = fetch_edanam_data()
         latest = data[0]
         latest_rate_pct = format_pct(float(latest["value"]))
         latest_date = latest["date"]
 
-        #flash("Fetched Latest Unemployment Data!", "success")
+        #flash("Fetched Latest Nutrition Data!", "success")
         return render_template("nutrition_dashboard.html",
             latest_rate_pct=latest_rate_pct,
             latest_date=latest_date,
